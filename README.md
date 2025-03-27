@@ -1,7 +1,7 @@
 <!-- # Maltimart Ecommerce
 
 ## 📌 Live Demo
-https://multimart-ecommerce.onrender.com
+https://twofoldtwins-ecommerce.onrender.com
 
 ## 😎 Features
 
@@ -25,13 +25,13 @@ From your command line, first clone this repo:
 
 ```
 # Clone this repository
-$ https://github.com/0mar-helal/multimart-react-ecommerce.git
+₹ https://github.com/0mar-helal/twofoldtwins-react-ecommerce.git
 
 # Go into the repository
-$ cd multimart-react-ecommerce
+₹ cd twofoldtwins-react-ecommerce
 
 # Remove current origin repository
-$ git remote remove origin
+₹ git remote remove origin
 
 ```
 
@@ -39,10 +39,10 @@ Then you can install the dependencies using NPM:
 
 ```
 # Install dependencies
-$ npm install
+₹ npm install
 
 # Start development server
-$ npm start
+₹ npm start
 ```
 👨‍💻 Happy coding!
 --- -->
