@@ -1,4 +1,4 @@
-# React Shopping Cart
+<!-- # React Shopping Cart
 
 Shopping cart app built with React and Firebase. Currently WIP.
 
@@ -118,4 +118,4 @@ Use "dummy-products.json" file in data folder as guide for your own data. At the
 
 ## Authors
 
-- [@jp-quintana](https://github.com/jp-quintana)
+- [@jp-quintana](https://github.com/jp-quintana) -->
