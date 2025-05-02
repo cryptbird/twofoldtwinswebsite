@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Send } from 'lucide-react';
 
@@ -77,7 +77,14 @@ const jobOpenings: JobOpening[] = [
 const OpeningsSection: React.FC = () => {
   return (
     <div className="bg-gray-800/50 p-6 rounded-lg shadow-md">
-      <h2 className="text-3xl font-bold text-center text-pink-400 mb-8">OPENINGS</h2>
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold text-pink-400 inline-block mr-3">
+          OPENINGS
+        </h2>
+        <span className="bg-gray-200 text-black text-xs font-bold px-2 py-1 rounded-full align-middle">
+          👑 Premium Feature
+        </span>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {jobOpenings.map((job) => (
           <div key={job.id} className="bg-gray-700 rounded-lg p-4 flex flex-col justify-between shadow-inner">
@@ -93,18 +100,14 @@ const OpeningsSection: React.FC = () => {
             <div className="flex flex-col space-y-2">
               {job.referralLink && (
                  <Button 
-                   variant="outline"
-                   size="sm" 
-                   className="w-full border-gray-500 text-gray-300 hover:bg-gray-600 hover:text-white"
+                   className="w-full border border-gray-500 text-gray-300 hover:bg-gray-600 hover:text-white bg-transparent text-sm px-3 py-1.5 h-auto"
                    onClick={() => window.open(job.referralLink, '_blank')}
                  >
                   <Send className="h-4 w-4 mr-2" /> Get Referral
                  </Button>
               )}
               <Button 
-                variant="secondary" 
-                size="sm" 
-                className="w-full bg-gray-600 text-white hover:bg-gray-500"
+                className="w-full bg-gray-600 text-white hover:bg-gray-500 text-sm px-3 py-1.5 h-auto"
                 onClick={() => window.open(job.applyLink, '_blank')}
               >
                 <ExternalLink className="h-4 w-4 mr-2" /> Apply Now

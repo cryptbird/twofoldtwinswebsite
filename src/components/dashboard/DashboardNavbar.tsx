@@ -15,7 +15,7 @@ const DashboardNavbar: React.FC = () => {
         {/* Logo */}
         <div className="text-xl font-bold">
           {/* Replace with your actual horizontal logo component or text */}
-          TwoFoldTwins
+          twofoldtwins
         </div>
 
         {/* Profile Dropdown */}
