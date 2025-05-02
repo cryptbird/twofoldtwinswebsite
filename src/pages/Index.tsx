@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowDown, CheckCircle, SmilePlus } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const companyLogos = [
   { name: "Google", url: "https://www.vectorlogo.zone/logos/google/google-ar21.svg" },
   { name: "Microsoft", url: "https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21.svg" },
-  { name: "JPMC", url: "https://www.vectorlogo.zone/logos/jpmorganchase/jpmorganchase-ar21.svg" },
+  { name: "JPMC", url: "https://justcapital.com/wp-content/themes/justcapital/assets/img/company-logos/JPM.png" },
   { name: "Oracle", url: "https://www.vectorlogo.zone/logos/oracle/oracle-ar21.svg" },
-  { name: "KPMG", url: "https://www.vectorlogo.zone/logos/kpmg/kpmg-ar21.svg" },
-  { name: "ION", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/ION_Group_logo.svg/320px-ION_Group_logo.svg.png" }
+  { name: "KPMG", url: "https://www.cpapracticeadvisor.com/wp-content/uploads/2020/08/kpmg_logo.5f285e905d1fe.png" },
+  { name: "ION", url: "https://upload.wikimedia.org/wikipedia/commons/4/45/ION_Group.svg" }
 ];
 
 const Index = () => {
@@ -34,7 +35,7 @@ const Index = () => {
                 y: [0, i % 2 === 0 ? 10 : -10, 0],
               }}
               transition={{
-                duration: 10 + i * 2,
+                duration:10 + i * 2,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
@@ -222,7 +223,7 @@ const Index = () => {
               animate={{ x: ["0%", "-50%"] }}
               transition={{ 
                 ease: "linear", 
-                duration: 20, 
+                duration: 10, 
                 repeat: Infinity 
               }}
             >
@@ -281,14 +282,12 @@ const Index = () => {
               ))}
             </div>
             
-            <a 
-              href="http://www.demolink.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to="/dashboard" 
               className="btn-primary"
             >
               Checkout the Demo Dashboard
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -303,8 +302,12 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-10 text-center">
-              For Students going in 3rd Year
+             Industry Placement Training & Internship Program <br />
             </h2>
+            <h4 style={{marginTop: "-20px", color: "red"}}>
+              <center>*for Students going in 3rd Year</center>
+            
+            </h4>
             
             <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="p-8">
