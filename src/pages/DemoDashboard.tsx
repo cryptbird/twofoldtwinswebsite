@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+import { useEffect } from 'react';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import HireabilityScoreTile from '@/components/dashboard/HireabilityScoreTile';
 import ProjectsTile from '@/components/dashboard/ProjectsTile';
@@ -8,6 +9,10 @@ import LeaderboardTile from '@/components/dashboard/LeaderboardTile';
 import OpeningsSection from '@/components/dashboard/OpeningsSection';
 
 const DemoDashboard: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white font-sans">
       <DashboardNavbar />
