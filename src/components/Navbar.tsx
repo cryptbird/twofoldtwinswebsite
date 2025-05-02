@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,8 +20,10 @@ const Navbar = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = `/#${id}`;
     }
-    setIsOpen(false); // Close menu after clicking
+    setIsOpen(false);
   };
 
   return (
@@ -44,6 +47,7 @@ const Navbar = () => {
             <button onClick={() => scrollToSection('projects')} className="text-gray-700 hover:text-primary">Projects</button>
             <button onClick={() => scrollToSection('interviews')} className="text-gray-700 hover:text-primary">Interviews</button>
             <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-primary">Pricing</button>
+            <Link to="/dashboard" className="text-gray-700 hover:text-primary">Demo Dashboard</Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -72,34 +76,41 @@ const Navbar = () => {
             <div className="flex flex-col space-y-4 px-4">
               <button 
                 onClick={() => scrollToSection('home')} 
-                className="text-gray-700 hover:text-primary py-2"
+                className="text-gray-700 hover:text-primary py-2 text-left"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('mentorship')} 
-                className="text-gray-700 hover:text-primary py-2"
+                className="text-gray-700 hover:text-primary py-2 text-left"
               >
                 Mentorship
               </button>
               <button 
                 onClick={() => scrollToSection('projects')} 
-                className="text-gray-700 hover:text-primary py-2"
+                className="text-gray-700 hover:text-primary py-2 text-left"
               >
                 Projects
               </button>
               <button 
                 onClick={() => scrollToSection('interviews')} 
-                className="text-gray-700 hover:text-primary py-2"
+                className="text-gray-700 hover:text-primary py-2 text-left"
               >
                 Interviews
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')} 
-                className="text-gray-700 hover:text-primary py-2"
+                className="text-gray-700 hover:text-primary py-2 text-left"
               >
                 Pricing
               </button>
+              <Link 
+                to="/dashboard" 
+                className="text-gray-700 hover:text-primary py-2 text-left"
+                onClick={() => setIsOpen(false)}
+              >
+                Demo Dashboard
+              </Link>
               <div className="pt-4 border-t border-gray-200">
                 <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors">
                   Apply Now

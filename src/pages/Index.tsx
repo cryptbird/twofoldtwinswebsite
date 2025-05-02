@@ -77,7 +77,7 @@ const Index = () => {
       </section>
 
       {/* 1:1 Personal Mentor Meetings */}
-      <section className="py-24 bg-white">
+      <section id="mentorship" className="py-24 bg-white">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -131,7 +131,7 @@ const Index = () => {
       </section>
 
       {/* Unique Projects */}
-      <section className="py-24 bg-white">
+      <section id="projects" className="py-24 bg-white">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -185,7 +185,7 @@ const Index = () => {
       </section>
 
       {/* Mock Interviews */}
-      <section className="py-24 bg-white">
+      <section id="interviews" className="py-24 bg-white">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -293,7 +293,7 @@ const Index = () => {
       </section>
 
       {/* Pricing - 3rd Year */}
-      <section className="py-24 bg-white">
+      <section id="pricing" className="py-24 bg-white">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

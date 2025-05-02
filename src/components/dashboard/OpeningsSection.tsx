@@ -1,6 +1,17 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Send } from 'lucide-react';
+import { ExternalLink, Send, Linkedin, Mail } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogFooter,
+  DialogClose
+} from "@/components/ui/dialog";
 
 interface JobOpening {
   id: number;
@@ -74,16 +85,25 @@ const jobOpenings: JobOpening[] = [
   },
 ];
 
+// Sample Referral Contacts
+const sampleReferrals = [
+  { name: "Aisha Sharma", email: "aisha.s@example.com", linkedin: "#" },
+  { name: "Rohan Verma", email: "rohan.v@example.com", linkedin: "#" },
+  { name: "Priya Patel", email: "priya.p@example.com", linkedin: "#" },
+];
+
 const OpeningsSection: React.FC = () => {
+  const [openDialogJobId, setOpenDialogJobId] = useState<number | null>(null);
+
   return (
     <div className="bg-gray-800/50 p-6 rounded-lg shadow-md">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-pink-400 inline-block mr-3">
           OPENINGS
         </h2>
-        <span className="bg-gray-200 text-black text-xs font-bold px-2 py-1 rounded-full align-middle">
+        {/* <span className="bg-gray-200 text-black text-xs font-bold px-2 py-1 rounded-full align-middle">
           👑 Premium Feature
-        </span>
+        </span> */}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {jobOpenings.map((job) => (
@@ -99,12 +119,54 @@ const OpeningsSection: React.FC = () => {
             </div>
             <div className="flex flex-col space-y-2">
               {job.referralLink && (
-                 <Button 
-                   className="w-full border border-gray-500 text-gray-300 hover:bg-gray-600 hover:text-white bg-transparent text-sm px-3 py-1.5 h-auto"
-                   onClick={() => window.open(job.referralLink, '_blank')}
-                 >
-                  <Send className="h-4 w-4 mr-2" /> Get Referral
-                 </Button>
+                 <Dialog open={openDialogJobId === job.id} onOpenChange={(isOpen) => !isOpen && setOpenDialogJobId(null)}>
+                   <DialogTrigger asChild>
+                     <Button 
+                       className="relative w-full border border-gray-500 text-gray-300 hover:bg-gray-600 hover:text-white bg-transparent text-sm px-3 py-1.5 h-auto overflow-visible"
+                       onClick={() => setOpenDialogJobId(job.id)}
+                     >
+                       <span className="relative flex items-center justify-center">
+                         <Send className="h-4 w-4 mr-2" /> Get Referral
+                       </span>
+                       <span className="absolute top-0 right-0 transform translate-x-3 -translate-y-3 text-xl leading-none">
+                         👑
+                       </span>
+                     </Button>
+                   </DialogTrigger>
+                   <DialogContent className="bg-gray-800 border-gray-700 text-white sm:max-w-[525px]">
+                     <DialogHeader>
+                       <DialogTitle className="text-xl text-gray-100">Referral Contacts for {job.companyName}</DialogTitle>
+                       <DialogDescription className="text-gray-400">
+                        This is a Premium Feature
+                         Reach out to these Alumni contacts for a potential referral. Mention the MentorMe program!
+                       </DialogDescription>
+                     </DialogHeader>
+                     <div className="py-4">
+                       <ul className="space-y-3">
+                         {sampleReferrals.map((contact, index) => (
+                           <li key={index} className="flex items-center justify-between p-2 bg-gray-700 rounded">
+                             <span className="text-sm font-medium text-gray-200">{contact.name}</span>
+                             <div className="flex items-center space-x-3">
+                               <a href={`mailto:${contact.email}`} className="text-gray-400 hover:text-gray-100" title={contact.email}>
+                                 <Mail className="h-4 w-4" />
+                               </a>
+                               <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-100" title="LinkedIn Profile">
+                                 <Linkedin className="h-4 w-4" />
+                               </a>
+                             </div>
+                           </li>
+                         ))}
+                       </ul>
+                     </div>
+                     <DialogFooter>
+                       <DialogClose asChild>
+                         <Button type="button" className="bg-gray-600 hover:bg-gray-500 text-white">
+                           Close
+                         </Button>
+                       </DialogClose>
+                     </DialogFooter>
+                   </DialogContent>
+                 </Dialog>
               )}
               <Button 
                 className="w-full bg-gray-600 text-white hover:bg-gray-500 text-sm px-3 py-1.5 h-auto"
