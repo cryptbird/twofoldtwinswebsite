@@ -8,7 +8,10 @@ const Footer = () => {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">MentorMe</h3>
+            <div className="flex">
+          <img src="/genup.png" alt="genUP Logo" className="h-10 w-10" /> 
+            <h3 className="text-4xl font-bold mb-4">GenUP</h3>
+            </div>
             <p className="text-gray-400 mb-4">
               Empowering students with personalized mentorship to secure their dream placements.
             </p>
@@ -32,16 +35,16 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Home</a>
+                <a href="#home" className="text-gray-400 hover:text-white">Home</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Mentorship</a>
+                <a href="#mentorship" className="text-gray-400 hover:text-white">Mentorship</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Projects</a>
+                <a href="#projects" className="text-gray-400 hover:text-white">Projects</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Interviews</a>
+                <a href="#interviews" className="text-gray-400 hover:text-white">Interviews</a>
               </li>
             </ul>
           </div>
@@ -50,16 +53,16 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">For Students</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">3rd Year Plan</a>
+                <a href="#pricing" className="text-gray-400 hover:text-white">3rd Year Plan</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">4th Year Plans</a>
+                <a href="#4thyear" className="text-gray-400 hover:text-white">4th Year Plans</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Success Stories</a>
+                {/* <a href="#" className="text-gray-400 hover:text-white">Success Stories</a> */}
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">FAQs</a>
+                {/* <a href="#" className="text-gray-400 hover:text-white">FAQs</a> */}
               </li>
             </ul>
           </div>
@@ -68,10 +71,12 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
             <ul className="space-y-2">
               <li className="text-gray-400">
-                Email: info@mentorme.com
+                Email: twofoldtwinsinc@gmail.com
               </li>
               <li className="text-gray-400">
-                Phone: +91 9876543210
+                Phone: +91 6375257460 <br />
+                Phone: +91 7742149577
+                
               </li>
             </ul>
           </div>

@@ -57,7 +57,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="mx-auto max-w-3xl text-center"
           >
-            <h2 className="text-lg font-medium tracking-tight text-gray-700 mb-3">
+            <h2 className="text-2xl font-medium tracking-tight text-gray-700 mb-3">
               Worried for Placement skills? Don't worry,
             </h2>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl mb-8">
@@ -123,8 +123,7 @@ const Index = () => {
             <div className="order-1 md:order-2">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Competitive Leaderboard</h2>
               <p className="text-lg text-gray-600">
-                Compare yourself with your batch's average, with maintaining anonymity of your profile (Only if you are not in top 5 ;) <SmilePlus className="inline h-5 w-5" />)
-              </p>
+              See how you compare with your batch's average—anonymously, of course (unless you're in the top 5 😉 <SmilePlus className='inline h-5 w-5' />).              </p>
             </div>
           </motion.div>
         </div>
@@ -143,7 +142,7 @@ const Index = () => {
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Unique Projects</h2>
               <p className="text-lg text-gray-600">
-                Recruiter wants good skills, great scores and UNIQUE PROJECTS!!!!, We'll help you stand out of the rat race and grab what's yours.
+                Recruiter wants good skills, great scores and UNIQUE PROJECTS!!, We'll help you stand out of the rat race and grab what's yours.
               </p>
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg">
@@ -177,8 +176,8 @@ const Index = () => {
             <div className="order-1 md:order-2">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Openings</h2>
               <p className="text-lg text-gray-600">
-                We'll provide you with latest openings and will CONNECT YOU WITH ALUMNI'S YOU CAN TAKE REFER FROM! for each goddamn opening!!!!!
-              </p>
+                We'll provide you with latest openings and will <b>CONNECT YOU WITH ALUMNI'S YOU CAN TAKE REFERAL FROM!</b> for each goddamn opening!!
+                </p>
             </div>
           </motion.div>
         </div>
@@ -197,7 +196,7 @@ const Index = () => {
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Mock Interviews</h2>
               <p className="text-lg text-gray-600">
-                Even if you cheat in tests, your skills will still be judged in the mock interviews!! To make sure your overall growth. Because WE CARE FOR YOU!
+              Even if you manage to cheat on tests, your true skills will be evaluated during the mock interviews—ensuring your genuine growth. Because we truly care about your success!
               </p>
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg">
@@ -275,12 +274,17 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[1, 2, 3].map((item) => (
                 <div key={item} className="bg-white rounded-xl shadow-md overflow-hidden">
-                  <div className="bg-gray-200 h-48 flex items-center justify-center">
-                    <span className="text-gray-500">Dashboard Screenshot {item}</span>
+                  <div className="bg-gray-200 h-60  flex items-center justify-center">
+                    <img 
+                      src={`/Dashboard${item}.png`} 
+                      alt={`Dashboard Screenshot ${item}`} 
+                      className="h-full w-full object-cover" 
+                    />
                   </div>
                 </div>
               ))}
             </div>
+
             
             <Link 
               to="/dashboard" 
@@ -304,10 +308,10 @@ const Index = () => {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-10 text-center">
              Industry Placement Training & Internship Program <br />
             </h2>
-            <h4 style={{marginTop: "-20px", color: "red"}}>
+            <h3 style={{marginTop: "-20px", color: "red", fontSize: "x-large"}}>
               <center>*for Students going in 3rd Year</center>
             
-            </h4>
+            </h3>
             
             <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="p-8">
@@ -315,13 +319,16 @@ const Index = () => {
                   <tbody>
                     {[
                       "1:1 Personal Mentorship",
+                      "Daily Personalised Tasks",
+                      "Advanced Dashboard Access",
                       "Competitive Leaderboard",
-                      "Unique Projects",
-                      "Job Openings",
-                      "Mock Interviews",
+                      "Unique Projects for Resume",
+                      "Internship Opportunities",
+                      "Interview Prep Kit",
                       "Alumni Network Access",
-                      "Daily Tasks",
-                      "Dashboard Access"
+                      "Refurbishing/Building Resume",
+                      "LinkedIn Profile Review"
+
                     ].map((feature, i) => (
                       <tr key={i} className="border-b last:border-0">
                         <td className="py-4 text-gray-700">{feature}</td>
@@ -346,8 +353,8 @@ const Index = () => {
       </section>
 
       {/* Pricing - 4th Year */}
-      <section className="py-24 bg-secondary">
-        <div className="container">
+      <section className="py-24 bg-secondary" id="4thyear">
+        <div className="container" >
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -355,48 +362,73 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-10 text-center">
-              For Students going in 4th Year
+              Accelerated Placement Training Sprint <br /><br />
             </h2>
+            <h4 style={{marginTop: "-60px", color: "red" , fontSize: "x-large"}} className="mb-5">
+              <center>*for Students going in 4th Year</center>
             
+            </h4>
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                { price: "₹999/-", title: "Basic Plan" },
-                { price: "₹1499/-", title: "Premium Plan" }
-              ].map((plan, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                  <div className="p-8">
-                    <h3 className="text-xl font-bold mb-4 text-center">{plan.title}</h3>
-                    <table className="w-full">
-                      <tbody>
-                        {[
-                          "1:1 Personal Mentorship",
-                          "Competitive Leaderboard",
-                          "Unique Projects",
-                          "Job Openings",
-                          "Mock Interviews",
-                          "Alumni Network Access",
-                          "Daily Tasks",
-                          "Dashboard Access"
-                        ].map((feature, i) => (
-                          <tr key={i} className="border-b last:border-0">
-                            <td className="py-3 text-gray-700 text-sm">{feature}</td>
-                            <td className="py-3 text-center text-green-600">
-                              <CheckCircle className="h-5 w-5 inline-block" />
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                    
-                    <div className="mt-6 text-center">
-                      <p className="text-xl font-bold mb-4">Price: {plan.price} only</p>
-                      <button className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors">
-                        Apply
-                      </button>
-                    </div>
+            {[
+              {
+                price: "₹999/-",
+                title: "Basic Plan",
+                features: [
+                  "1:1 Personal Mentorship",
+                  "Daily Personalised Tasks",
+                  "Advanced Dashboard Access",
+                  "Unique Projects for Resume",
+                  "Competitive Leaderboard",
+                  "Job Opportunities",
+                  "Interview Prep Kit",
+                  "Refurbishing/Building Resume",
+                ]
+              },
+              {
+                price: "₹1499/-",
+                title: "Premium Plan",
+                features: [
+                  "1:1 Personal Mentorship",
+                  "Daily Personalised Tasks",
+                  "Advanced Dashboard Access",
+                  "Mock Interviews",
+                  "Unique Projects for Resume",
+                  "Competitive Leaderboard",
+                  "Job Opportunities",
+                  "Referral Contacts",
+                  "Interview Prep Kit",
+                  "Last Minute Company Specific Guidance",
+                  "Alumni Network Access",
+                  "Refurbishing/Building Resume",
+                  "LinkedIn Profile Review"
+                ]
+              }
+            ].map((plan, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full">
+                 <div className="p-8 flex-grow">
+                  <h3 className="text-xl font-bold mb-4 text-center">{plan.title}</h3>
+                  <table className="w-full">
+                    <tbody>
+                      {plan.features.map((feature, i) => (
+                        <tr key={i} className="border-b last:border-0">
+                          <td className="py-3 text-gray-700 text-sm">{feature}</td>
+                          <td className="py-3 text-center text-green-600">
+                            <CheckCircle className="h-5 w-5 inline-block" />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-6 border-t text-center">
+                    <p className="text-xl font-bold mb-4">Price: {plan.price} only</p>
+                    <button className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors">
+                      Apply
+                    </button>
                   </div>
                 </div>
-              ))}
+            ))}
+
             </div>
           </motion.div>
         </div>

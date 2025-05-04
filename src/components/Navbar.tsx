@@ -37,7 +37,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-primary">MentorMe</span>
+            <img src="/genup2.png" alt="genUP Logo" className="h-10 w-10" /> 
+            <span className="text-2xl font-bold text-black ">GenUP</span>
           </div>
           
           {/* Desktop Menu */}
@@ -51,7 +52,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors">
+            <button onClick={() => scrollToSection('pricing')} className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors">
               Apply Now
             </button>
           </div>

@@ -137,8 +137,8 @@ const OpeningsSection: React.FC = () => {
                      <DialogHeader>
                        <DialogTitle className="text-xl text-gray-100">Referral Contacts for {job.companyName}</DialogTitle>
                        <DialogDescription className="text-gray-400">
-                        This is a Premium Feature
-                         Reach out to these Alumni contacts for a potential referral. Mention the MentorMe program!
+                        This is a Premium Feature,
+                         Reach out to these these contacts for a potential referral. 
                        </DialogDescription>
                      </DialogHeader>
                      <div className="py-4">
